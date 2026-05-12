@@ -1,0 +1,19 @@
+# Stealth Auditing Domain
+type system_auditor, domain;
+type system_auditor_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(system_auditor)
+
+# Allow BPF operations
+allow system_auditor self:capability2 { bpf perfmon };
+allow system_auditor bpffs:dir search;
+allow system_auditor bpffs:file { read write };
+
+# Allow vsock for communication with pVM
+allow system_auditor self:vsock_socket { create_socket_perms_no_ioctl listen accept };
+
+# Allow performance monitoring (uprobes)
+allow system_auditor self:perf_event { open cpu kernel read write };
+
+# Allow accessing vendor-specific BPF maps
+allow system_auditor vendor_shell_exec:file rx_file_perms;

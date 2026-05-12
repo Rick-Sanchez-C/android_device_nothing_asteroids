@@ -44,3 +44,7 @@
 
 # ZRAM
 /data/per_boot(/.*)?    u:object_r:per_boot_file:s0
+
+# Stealth Auditing Daemons
+/vendor/bin/auditor_reader    u:object_r:system_auditor_exec:s0
+/vendor/bin/auditor_broker    u:object_r:system_auditor_exec:s0
