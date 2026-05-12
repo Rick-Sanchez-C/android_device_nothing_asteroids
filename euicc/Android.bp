@@ -30,13 +30,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "hidden-api-whitelist-org.lineageos.euicc.xml",
-    src: "hidden-api-whitelist-org.lineageos.euicc.xml",
-    sub_dir: "sysconfig",
-    product_specific: true,
-}
-
-prebuilt_etc {
     name: "default-permissions-com.google.android.euicc.xml",
     src: "default-permissions-com.google.android.euicc.xml",
     sub_dir: "default-permissions",

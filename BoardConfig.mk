@@ -9,6 +9,7 @@ BUILD_BROKEN_DUP_RULES := true
 
 include build/make/target/board/BoardConfigMainlineCommon.mk
 include vendor/nothing/asteroids/BoardConfigVendor.mk
+include hardware/qcom-caf/common/BoardConfigQcom.mk
 
 # A/B
 AB_OTA_UPDATER := true
@@ -65,6 +66,7 @@ TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a-branchprot
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_VARIANT := cortex-a76
+TARGET_HAS_ARM_MTE := true
 
 # Audio
 AUDIO_FEATURE_ENABLED_AGM_HIDL := true
